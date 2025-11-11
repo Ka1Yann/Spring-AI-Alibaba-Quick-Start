@@ -3,7 +3,6 @@ package com.ka1yan.springai.zhipu.controller;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatModel;
-import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.zhipuai.ZhiPuAiChatOptions;
 import org.springframework.web.bind.annotation.*;
@@ -69,6 +68,5 @@ public class ZhipuChatController {
                         .maxTokens(65535)
                         .build())).mapNotNull(chatResponse -> chatResponse.getResult().getOutput().getText());
     }
-
 
 }
