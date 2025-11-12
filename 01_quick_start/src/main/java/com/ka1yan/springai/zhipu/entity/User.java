@@ -1,4 +1,4 @@
-package com.ka1yan.springai.zhipu.entiry;
+package com.ka1yan.springai.zhipu.entity;
 
 import lombok.Data;
 

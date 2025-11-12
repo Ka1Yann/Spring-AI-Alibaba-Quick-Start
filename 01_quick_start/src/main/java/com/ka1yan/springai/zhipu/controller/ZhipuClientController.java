@@ -1,6 +1,6 @@
 package com.ka1yan.springai.zhipu.controller;
 
-import com.ka1yan.springai.zhipu.entiry.User;
+import com.ka1yan.springai.zhipu.entity.User;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.prompt.DefaultChatOptions;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -5,7 +5,7 @@ server:
       charset: UTF-8
       force: true
       enabled: true
-
+# spring ai
 spring:
   ai:
     zhipuai:
@@ -14,3 +14,16 @@ spring:
       chat:
         options:
           model: glm-4.5
+# mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/zhipuai?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password:
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # 指定 Mapper.xml 文件的位置（classpath 即 resources 目录）
+  type-aliases-package: com.ka1yan.springai.zhipu.entity  # 实体类包路径（自动生成别名，简化 resultType 写法）
+  configuration:
+    map-underscore-to-camel-case: true  # 开启驼峰命名映射（如数据库字段 user_name → 实体类 userName）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 打印 SQL 日志（开发环境方便调试）

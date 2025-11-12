@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ka1yan.springai.zhipu.mapper.ChatMemoryMapper">
+
+    <insert id="saveMessages">
+        insert into chat_message (conversation_id, message, type) values
+        <foreach item="item" collection="messages" separator=",">
+            (#{conversationId}, #{item}, #{type})
+        </foreach>
+    </insert>
+
+    <insert id="saveMessage">
+        insert into chat_message (conversation_id, message, type) values (#{conversationId}, #{message}, #{type})
+    </insert>
+
+    <select id="getLastMessages" resultType="chatRecord">
+        select message, type from chat_message where conversation_id = #{conversationId} order by id desc limit #{count}
+    </select>
+
+</mapper>
